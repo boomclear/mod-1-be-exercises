@@ -8,23 +8,27 @@ RSpec.describe 'select' do
     expect(evens).to eq([2, 4, 6, 8, 10])
   end
 
-  xit 'odd numbers' do
+  it 'odd numbers' do
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     odds = numbers.select do |number|
-      # Your code goes here
+      number.odd?
     end
     expect(odds).to eq([1, 3, 5, 7, 9])
   end
 
-  xit 'words with three letters' do
+  it 'words with three letters' do
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
-    # Your code goes here
+    selected = words.select do |word|
+      word.length == 3
+    end
     expect(selected).to eq(["bad", "cat", "dog", "red"])
   end
 
-  xit 'words with more than three letters' do
+  it 'words with more than three letters' do
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
-    # Your code goes here
+    selected = words.select do |word|
+      word.length > 3
+    end
     expect(selected).to eq(["pill", "finger", "blue", "table"])
   end
 
