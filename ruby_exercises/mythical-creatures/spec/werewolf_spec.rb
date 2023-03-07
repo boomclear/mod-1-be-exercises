@@ -79,7 +79,7 @@ RSpec.describe Werewolf do
     werewolf = Werewolf.new("David")
     john = Victim.new
     werewolf.consume(john)
-    expect(werewolf.consume(john)).to be false
+    expect(werewolf.consume(john)).to eq "Not a cannibal"
   end
 
   it 'a werewolf that has consumed a human being is no longer hungry' do
