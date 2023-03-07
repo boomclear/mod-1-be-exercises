@@ -32,45 +32,59 @@ RSpec.describe 'select' do
     expect(selected).to eq(["pill", "finger", "blue", "table"])
   end
 
-  xit 'wordss ending in e' do
+  it 'wordss ending in e' do
     words = ["are", "you", "strike", "thinking", "belt", "piece", "warble", "sing", "pipe"]
-    # Your code goes here
+    selected = words.select do |word|
+      word.end_with?("e")
+    end
     expect(selected).to eq(["are", "strike", "piece", "warble", "pipe"])
   end
 
-  xit 'words ending in ing' do
+  it 'words ending in ing' do
     words = ["bring", "finger", "drought", "singing", "bingo", "purposeful"]
-    # Your code goes here
+    selected = words.select do |word|
+      word.end_with?("ing")
+    end
     expect(selected).to eq(["bring", "singing"])
   end
 
-  xit 'words containing e' do
+  it 'words containing e' do
     words = ["four", "red", "five", "blue", "pizza", "purple"]
-    # Your code goes here
+    selected = words.select do |word|
+      word.include?("e")
+    end
     expect(selected).to eq(["red", "five", "blue", "purple"])
   end
 
-  xit 'dinosaurs' do
+  it 'dinosaurs' do
     animals = ["tyrannosaurus", "narwhal", "eel", "achillesaurus", "qingxiusaurus"]
-    # Your code goes here
+    dinosaurs = animals.select do |animal|
+      animal.include?("saurus")
+    end
     expect(dinosaurs).to eq(["tyrannosaurus", "achillesaurus", "qingxiusaurus"])
   end
 
-  xit 'floats' do
+  it 'floats' do
     numbers = [3, 1.4, 3.5, 2, 4.9, 9.1, 8.0]
-    # Your code goes here
+    floats = numbers.select do |number|
+      number.kind_of?(Float)
+    end
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
 
-  xit 'arrays' do
+  it 'arrays' do
     elements = ["CAT", ["dog"], 23, [56, 3, 8], "AIMLESS", 43, "butter"]
-    # Your code goes here
+    arrays = elements.select do |element|
+      element.kind_of?(Array)
+    end
     expect(arrays).to eq([["dog"], [56, 3, 8]])
   end
 
-  xit 'hashes' do
+  it 'hashes' do
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
-    # Your code goes here
+    hashes = elements.select do |element|
+      element.kind_of?(Hash)
+    end
     expect(hashes).to eq([{:dog=>"fido"}, {:stuff=>"things"}])
   end
 end
