@@ -38,7 +38,7 @@ RSpec.describe Direwolf do
     expect(stark.location).to eq('Winterfell')
   end
 
-  it 'starts off with no Starks to protect' do
+ it 'starts off with no Starks to protect' do
     wolf = Direwolf.new('Nymeria')
     stark = Stark.new('Arya')
 
